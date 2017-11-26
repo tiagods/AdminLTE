@@ -1,0 +1,16 @@
+/*
+######################
+# UTILS
+######################
+*/
+.rh-required > .control-label:after{
+	content: "*";
+}
+/*
+###################
+# SISTEM PAGES
+###################
+*/
+.table-col-acoes {
+	width: 80px;
+}
