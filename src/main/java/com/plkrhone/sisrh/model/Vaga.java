@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
@@ -35,44 +36,84 @@ public class Vaga implements Serializable {
 	private Calendar criadoEm;
 	@Size(max=255,message="Fonte não pode ter mais que 255 caracteres")
 	private String fonte;
-
-	public int getId() {
+	
+	@PrePersist
+	private void prePersist() {
+		if(this.criadoEm==null) criadoEm = Calendar.getInstance();
+	}
+	
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
+	/**
+	 * @return the nome
+	 */
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+	/**
+	 * @return the descricao
+	 */
 	public String getDescricao() {
 		return descricao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
+	/**
+	 * @return the criadoEm
+	 */
 	public Calendar getCriadoEm() {
 		return criadoEm;
 	}
 
-	public void setCriadoEm(Calendar criadoEm) {
-		this.criadoEm = criadoEm;
-	}
-
+	/**
+	 * @return the fonte
+	 */
 	public String getFonte() {
 		return fonte;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param nome the nome to set
+	 */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	/**
+	 * @param descricao the descricao to set
+	 */
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	/**
+	 * @param criadoEm the criadoEm to set
+	 */
+	public void setCriadoEm(Calendar criadoEm) {
+		this.criadoEm = criadoEm;
+	}
+
+	/**
+	 * @param fonte the fonte to set
+	 */
 	public void setFonte(String fonte) {
 		this.fonte = fonte;
+	}
+
+	public boolean isExcluirEnabled() {
+		return this.id>2853;
 	}
 
 	/* (non-Javadoc)
@@ -105,10 +146,5 @@ public class Vaga implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return this.nome;
 	}
 }
