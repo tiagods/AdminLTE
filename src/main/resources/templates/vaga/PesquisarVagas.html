@@ -17,15 +17,17 @@ layout:decorator="layout/LayoutBody">
 			<div class="box">
 				<div class="box-header with-border">
 					<div class="box-title">
-						<div class="input-group input-group-sm" style="width: 150px;">
-							<input class="form-control pull-right" name="table_search"
-								placeholder="Buscar nome" type="text" />
-							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit">
-									<i class="fa fa-search"></i>
-								</button>
+						<form method="GET" th:object="${vagaFilter}">
+							<div class="input-group input-group-sm" style="width: 150px;">
+								<input class="form-control pull-right" name="table_search"
+									placeholder="Buscar nome" type="text" autofocus="autofocus" th:field="*{nome}"/>
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 					<div class="box-tools">
 						<a class="btn btn-primary" th:href="@{/vagas/novo}"> 
