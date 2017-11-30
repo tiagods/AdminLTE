@@ -17,8 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <link rel="stylesheet" th:href="@{/layout/css/plkrhone.css}"></link>
   
-  <!-- Stylesheet default project -->
+  <!-- Stylesheet custom project -->
   <link rel="stylesheet" th:href="@{/css/sisrh.css}"></link>
+    
+  <!-- Stylesheet select2 project -->
+  <link rel="stylesheet" th:href="@{/css/select2-bootstrap.min.css}"></link>
+  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
   <link rel="stylesheet" th:href="@{/layout/css/vendors.min.css}"></link>
@@ -97,5 +101,8 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+<script th:src="@{/layout/vendors/select2/select2.full.min.js}"></script>     
+
+<th:block layout:fragment="javascript-extra"></th:block>
 </body>
 </html>

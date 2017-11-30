@@ -36,7 +36,7 @@ layout:decorator="layout/LayoutBody">
 			    		<div class="row">
 			    			<div class="form-group col-md-8 col-lg-8 " th:classappend="${#fields.hasErrors('nome')} ? has-error">
 					    		<label for="nome">Nome</label>
-					    		<input type="text" id="nome" class="form-control col-lg-6 col-md-6 border-danger" placeholder="Informe o nome da vaga" th:field="*{nome}" />
+					    		<input type="text" id="nome" class="form-control " placeholder="Informe o nome da vaga" th:field="*{nome}" />
 				    		</div>
 				    	</div>
 				    	<div class="row">

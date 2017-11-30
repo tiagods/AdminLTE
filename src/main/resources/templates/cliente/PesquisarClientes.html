@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="layout/LayoutBody">
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" layout:fragment="conteudo">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Vaga<small>Listagem de Vagas</small>
+      </h1>
+    </section>
+    <!-- Main content - Formulario -->
+    <section class="content container-fluid">
+    	<div class="row">
+			<div class="box">
+				<div class="box-header with-border">
+					<div class="box-title">
+						<form method="GET" th:object="${vagaFilter}">
+							<div class="input-group input-group-sm" style="width: 150px;">
+								<input class="form-control pull-right" name="table_search"
+									placeholder="Buscar nome" type="text" autofocus="autofocus" th:field="*{nome}"/>
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="box-tools">
+						<a class="btn btn-primary" th:href="@{/vagas/novo}"> 
+						<i class="glyphicon glyphicon-plus-sign"></i> <span
+							class="hidden-xs hidden-sm">Novo Registro</span>
+						</a>
+					</div>
+				</div>
+				
+				<div class="box-body">
+					<table class="table table-hover table-responsive table-hover">
+						<thead>
+							<tr>
+								<th class="text-center">*</th>
+								<th class="text-center">Nome</th>
+								<th class="text-center">Descricao</th>
+								<th class="table-col-acoes"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="vaga : ${vagas}">
+								<td class="text-center" th:text="${vaga.id}"></td>
+								<td class="text-center" th:text="${vaga.nome}"></td>
+								<td class="text-center" th:text="${vaga.descricao}"></td>
+								
+								<td class="text-center">
+									<!-- Permitir a exclusão apenas em itens criados manualemente -->
+									<span th:if="${vaga.isExcluirEnabled()}">
+										<a class="btn  btn-link  btn-xs"
+										title="Editar"> <i class="glyphicon glyphicon-pencil"></i>
+										</a> <a class="btn  btn-link  btn-xs" title="Excluir"> <i
+												class="glyphicon glyphicon-remove"></i>
+										</a>
+									</span>
+								</td>
+							</tr>
+							<tr th:if="${#lists.isEmpty(vagas)}">
+								<td colspan="4">Nenhum registro foi localizado</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</html>

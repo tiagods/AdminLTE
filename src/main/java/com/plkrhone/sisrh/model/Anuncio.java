@@ -41,9 +41,9 @@ public class Anuncio implements Serializable {
     @Column(name="data_admissao")
     private Calendar dataAdmissao;
     //area do formulario
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="formulario_requisicao")
-    private FormularioRequisicao formularioRequisicao;
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinColumn(name="formulario_requisicao")
+//    private FormularioRequisicao formularioRequisicao;
     //area do contrato
     @Temporal(TemporalType.DATE)
     @Column(name="data_envio_contrato")
@@ -170,14 +170,6 @@ public class Anuncio implements Serializable {
 
     public void setDataAdmissao(Calendar dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
-    }
-
-    public FormularioRequisicao getFormularioRequisicao() {
-        return formularioRequisicao;
-    }
-
-    public void setFormularioRequisicao(FormularioRequisicao formularioRequisicao) {
-        this.formularioRequisicao = formularioRequisicao;
     }
 
     public Calendar getDataEnvioContrato() {
