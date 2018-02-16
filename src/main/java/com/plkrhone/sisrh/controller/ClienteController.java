@@ -13,10 +13,10 @@ import com.plkrhone.sisrh.model.ClienteSetor;
 import com.plkrhone.sisrh.repository.ClienteSetores;
 
 @Controller
-@RequestMapping("/clientes")
+@RequestMapping("/admin/clientes")
 public class ClienteController {
-	private static String CLIENTES_VIEW="cliente/PesquisarClientes";
-	private static String CLIENTES_CADASTRO="cliente/CadastroCliente";
+	private static String CLIENTES_VIEW="admin/cliente/PesquisarClientes";
+	private static String CLIENTES_CADASTRO="admin/cliente/CadastroCliente";
 	
 	@Autowired
 	private ClienteSetores setores;

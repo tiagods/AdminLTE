@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="admin/layout/LayoutBody">
+<div class="container" layout:fragment="conteudo">
+	<div id="page-title">
+		<h2>Clientes</h2>
+		<p>Cadastro e controle de clientes.</p>
+		<div class="row">
+			<div class="col">
+				<div class="panel">
+					<div class="panel-body">
+						<form class="form-horizontal bordered-row">
+							<div class="form-group">
+	                            <label for="id" class="col-sm-1 control-label">Data</label>
+	                            <div class="col-sm-2">
+	                                <div class="input-prepend input-group">
+	                                    <span class="add-on input-group-addon">
+	                                        <i class="glyph-icon icon-calendar"></i>
+	                                    </span>
+	                                    <input type="text" class="bootstrap-datepicker form-control" value="02/2018" data-date-format="mm/yyyy"/>
+	                                </div>
+	                            </div>
+	                            <label class="col-sm-1 control-label">Apelido</label>
+			                    <div class="col-sm-2">
+			                        <input class="form-control" placeholder="ID"></input>
+			                    </div>
+	                        	<label class="col-sm-1 control-label">Faturamento</label>
+			                    <div class="col-sm-2">
+			                        <input class="form-control" placeholder="R$20,00"></input>
+			                    </div>
+			                    <label class="col-sm-1 control-label">Pró-Labore</label>
+			                    <div class="col-sm-2">
+			                        <input class="form-control" placeholder="R$20,00"></input>
+			                    </div>
+			                    <div class="col-sm-2">
+			                    	<input class="btn btn-primary" type="submit" value="Salvar"></input>
+			                    </div>
+			                    <!-- Abrir modal quando já existir um cadastro -->
+	                        </div>
+						</form>
+					</div>
+					<div class="panel-body">	
+						<form class="form-horizontal bordered-row">
+							<div class="form-group">
+								<div class="col-sm-6 col-md-6">
+									<div class="fileinput fileinput-new input-group"
+										data-provides="fileinput">
+										<div class="form-control" data-trigger="fileinput">
+											<i class="glyphicon glyphicon-file fileinput-exists"></i> <span
+												class="fileinput-filename"></span>
+										</div>
+										<span class="input-group-addon btn btn-primary btn-file">
+											<span class="fileinput-new">Carregar um arquivo</span> <span
+											class="fileinput-exists">Carregar outro arquivo</span> <input type="file"
+											name="..."/>
+										</span> 
+										<a href="#"
+											class="input-group-addon btn btn-default fileinput-exists"
+											data-dismiss="fileinput">Remove</a>
+									</div>
+								</div>
+							</div>
+						</form>			
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="panel">
+					<div class="panel-body">
+						<h3 class="title-hero">Tabela de Clientes</h3>
+						<table
+							class="table table-striped table-hover table-responsive table-bordered">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Status</th>
+									<th>Nome</th>
+									<th>Acao</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Prata</td>
+									<td>Empresa Teste Ltda</td>
+									<td>Alterar/Remover</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Prata</td>
+									<td>Empresa Teste Ltda</td>
+									<td>Alterar/Remover</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Prata</td>
+									<td>Empresa Teste Ltda</td>
+									<td>Alterar/Remover</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Prata</td>
+									<td>Empresa Teste Ltda</td>
+									<td>Alterar/Remover</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

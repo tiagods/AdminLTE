@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div id="page-sidebar" class="bg-gradient-8 font-inverse">
+       <div class="scroll-sidebar">
+	    <ul id="sidebar-menu">
+		    <!--  <li class="header"><span>Geral</span></li>
+		    <li>
+		        <a th:href="@{/}" title="Dashboard">
+		            <i class="glyph-icon icon-linecons-tv"></i>
+		            <span>Admin dashboard</span>
+		        </a>
+		    </li>
+		    <li class="divider"></li>
+		    -->
+		    <li class="header"><span>Geral</span></li>
+			<li class="">
+		        <a href="javascript:void(0);" title="Cliente" class="sf-with-ul">
+		            <i class="glyph-icon icon-asterisk"></i>
+		            <span>Cliente</span>
+		        </a>
+		        <div class="sidebar-submenu" style="display: none;">
+		            <ul>
+		            	<li><a th:href="@{/admin/vaga}" title="Controle de Clientes"><span>Controle</span><span class="bs-label label-danger">*</span></a></li>
+		                <li><a th:href="@{/}" title="Controle de Clientes"><span>Admin Panel</span></a></li>
+		            </ul>
+		
+		        </div><!-- .sidebar-submenu -->
+		    </li>
+	    </ul><!-- #sidebar-menu -->
+    </div>
+</div>
+</html>

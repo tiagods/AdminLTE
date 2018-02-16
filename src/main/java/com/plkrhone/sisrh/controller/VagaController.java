@@ -18,10 +18,10 @@ import com.plkrhone.sisrh.service.VagaService;
 import com.plkrhone.sisrh.service.exception.NomeVagaJaCadastradoException;
 
 @Controller
-@RequestMapping("/vagas")
+@RequestMapping("/admin/vagas")
 public class VagaController {
-	private static final String VAGA_MENU="vaga/PesquisarVagas";
-	private static final String VAGA_CADASTRO="vaga/CadastroVaga";
+	private static final String VAGA_MENU="admin/vaga/PesquisarVagas";
+	private static final String VAGA_CADASTRO="admin/vaga/CadastroVaga";
 	
 	@Autowired
 	private Vagas vagas;
@@ -40,7 +40,7 @@ public class VagaController {
 			result.rejectValue("nome", e.getMessage(), e.getMessage());
 			return novo(vaga);
 		}
-		ModelAndView mv = new ModelAndView("redirect:/vagas/novo");
+		ModelAndView mv = new ModelAndView("redirect:/admin/vagas/novo");
 		redirect.addFlashAttribute("mensagem", "Registro salvo com sucesso!");
 		return mv;
 	}
